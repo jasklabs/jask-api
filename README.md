@@ -163,7 +163,37 @@ Returns a list of users and associated ID numbers to whom alerts can be assigned
 
 ## Signals API
 -------------------------------------------
+**Full Signal Detail:**
+```
+GET:  /api/signal/[SIGNAL ID]
+```
+Returns:
 
+Returns JSON of full signal detail, category, type, and other metadata.
+
+**Signal Enrichments:**
+```
+GET:  /api/alert/[SIGNAL ID]/enrichment
+```
+Returns:
+
+Returns object containing signal enrichment data if available.
+
+**Records Related to Signal Enrichment:**
+```
+GET:  /api/alert/[SIGNAL ID]/records/all
+```
+Returns:
+
+Returns JSON object containing all records (logs) conected with a signal if available. "all" may be substituted with a specific record type.
+
+**Customer Signal Counts:**
+```
+GET:  /api/signal/count  
+```
+Returns:
+
+Returns the total count of signals over 2/7/30 days and all time for your organization.
 
 ## Records API
 -------------------------------------------
@@ -180,14 +210,12 @@ Returns a list of users and associated ID numbers to whom alerts can be assigned
 ## Status API
 -------------------------------------------
 
-
 ## Threat Intel API
 -------------------------------------------
 
 
 ## Sensors API
 -------------------------------------------
-
 
 ## Patterns API
 -------------------------------------------
