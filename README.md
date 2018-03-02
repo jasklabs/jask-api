@@ -35,8 +35,11 @@ V.01 of this DOC will cover the following APIs and basic functionality for each:
 -------------------------------------------
 
 **Global Search:**
+
+JASK Search "query string" is compared to all fields across the selected context (All, Signals, Alerts or Assets), query examples could be IP addresses, Alert Names, or Countries, ISP names, etc). Comparision takes place in Elastic Search using [standard analyzer tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html). 
+
 ```
-GET:  /api/search?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
+GET:  /api/search?q=<query string>
 ```
 Returns:
 
@@ -44,7 +47,7 @@ JSON of all hits across data types of asset, smartalert, and signal inside optio
 
 **Signals Search:**
 ```
-GET:  /api/search/signals?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
+GET:  /api/search/signals?q=<query string>
 ```
 Returns:
 
@@ -52,7 +55,7 @@ JSON of all matching signals inside optional filter params.
 
 **Alert Search:**
 ```
-GET:  /api/search/alerts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
+GET:  /api/search/alerts?q=<query string>
 ```
 Returns:
 
@@ -60,11 +63,35 @@ JSON of all matching smartalerts inside optional filter params.
 
 **Asset Search:**
 ```
-GET:  /api/search/assetts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
+GET:  /api/search/assets?q=<query string>
 ```
 Returns:
 
 JSON of all matching assets inside optional filter params.
+
+**Search Query Modifiers for All Search Endpoints**
+
+
+Sort by (accending or decending) a given return field: 
+```
+FORMAT: &sort_by=<- or +><fieldname> 
+
+EXAMPLE: &sort_by=-timestamp (sort results by timestamp decending)
+```
+
+Limit Search Results 
+```
+FORMAT: &limit=<int> 
+
+EXAMPLE: &limit=<40> (Limit return to first 40 results)
+```
+
+Offset Search Results (For Pagination)
+```
+FORMAT: &offset=<int> 
+
+EXAMPLE: &offset=<41> (Start Results from #41)
+```
 
 -------------------------------------------
 
