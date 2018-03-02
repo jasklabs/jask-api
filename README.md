@@ -23,7 +23,7 @@ https://[CUSTOMER].portal.jask.ai/config
 ```
 **SCOPE**
 
-V.01 of this DOC will cover the following APIs and most relevant functionality for each:
+V.01 of this DOC will cover the following APIs and basic functionality for each:
 
 [Search](#Search-API) [SmartAlerts](#Alerts-API) [Signals](#Signals-API) [Records](#Records-API) [Assets](#Assets-API) [Integrations](#Integrations-API) [Status](#Status-API) [Threat Intel](#Threat-Intel-API) [Signals](#Signals-API) [Patterns](#Patterns-API)
 
