@@ -353,7 +353,7 @@ Returns:
 
 Returns a list of csvimports containing filename, ID, list of indicators and observables and timestamp of import. Specific details can be retrieved by appending the report ID. 
 
-*Please Utilize the UX/UI or attached Python Tool (*/api-tools/sample_intel_api.py*) for conducting CSV Imports* 
+*Please Utilize the UX/UI or attached Python Tool (/api-tools/sample_intel_api.py) for conducting CSV Imports* 
 
 ## Sensors API
 -------------------------------------------
