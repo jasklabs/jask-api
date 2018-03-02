@@ -36,7 +36,7 @@ V.01 of this DOC will cover the following APIs and basic functionality for each:
 
 **Global Search:**
 ```
-GET:  /api/search?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
+GET:  /api/search?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
 ```
 Returns:
 
@@ -44,7 +44,7 @@ JSON of all hits across data types of asset, smartalert, and signal inside optio
 
 **Signals Search:**
 ```
-GET:  /api/search/signals?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
+GET:  /api/search/signals?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
 ```
 Returns:
 
@@ -52,7 +52,7 @@ JSON of all matching signals inside optional filter params.
 
 **Alert Search:**
 ```
-GET:  /api/search/alerts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
+GET:  /api/search/alerts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
 ```
 Returns:
 
@@ -60,11 +60,66 @@ JSON of all matching smartalerts inside optional filter params.
 
 **Asset Search:**
 ```
-GET:  /api/search/assetts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
+GET:  /api/search/assetts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<int>]&[offset=<int>]
 ```
 Returns:
 
 JSON of all matching assets inside optional filter params.
 
+-------------------------------------------
+
+## SmartAlerts
+-------------------------------------------
+
+**Full Alert Details:**
+```
+GET:  /api/alert/[ALERT ID]
+```
+Returns:
+
+Full JSON of alert and relevant signals and assets.
+
+**Alert History:**
+```
+GET:  /api/alert/[ALERT ID]/history
+```
+Returns:
+
+Returns object containing history of alert if available.
+
+**Alert Comments View and Update:**
+```
+GET:  /api/alert/[ALERT ID]/comments
+
+POST: /api/alert/comment/<int:comment_id> 
+```
+Returns:
+
+GET Returns list of alert comments and comment id's. 
+POST Updates or adds comments to a specified alert. 
+
+**Alert Enrichments:**
+```
+GET:  /api/alert/[ALERT ID]/enrichment
+```
+Returns:
+
+Returns object containing alert enrichment data if available.
+
+**Customer Alert Counts:**
+```
+GET:  /api/alert/count  
+```
+Returns:
+
+Returns the total count of alerts over 2/7/30 days and all time for your organization.
+
+**Customer Alert Assignees (JASK Users):**
+```
+GET:  /api/alert/assignees 
+```
+Returns:
+
+Returns a list of users and associated ID numbers to whom alerts can be assigned in your organization.
 -------------------------------------------
 
