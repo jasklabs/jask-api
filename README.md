@@ -29,7 +29,7 @@ This repoistory contains python tools to interface with the most commonly utiliz
 
 V.01 of this DOC will cover the following APIs and basic functionality for each:
 
-[Search](#search-api) [SmartAlerts](#alerts-api) [Signals](#signals-api) [Assets](#assets-api) [Integrations](#integrations-api) [Status](#status-api) [Threat Intel](#threat-intel-api) [Sensors](#sensors-api) [Patterns](#patterns-api)
+**[Search](#search-api) - [SmartAlerts](#alerts-api) - [Signals](#signals-api) - [Assets](#assets-api) - [Integrations](#integrations-api) - [Status](#status-api) [Threat Intel](#threat-intel-api) - [Sensors](#sensors-api) - [Patterns](#patterns-api)**
 
 ## Search API
 -------------------------------------------
