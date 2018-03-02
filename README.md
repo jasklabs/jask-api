@@ -8,19 +8,19 @@
 Access to your JASK data is provided on a per cluster basis. 
 
 Please replace [CUSTOMER] with your organizations instance name in the universal base URL prepended to all examples:
-
+```
 https://[CUSTOMER].portal.jask.ai:443/api/
-
+```
 **AUTHENTICATION**
 
 Authentication is currently performed via GET variables consisting of username and API key appended to the end of all examples: 
-
+```
 ?username=[USERNAME]&api_key=[APIKEY]
-
+```
 You can retrieve your personal API key from the following URL under the "Profile" tab:
-
+```
 https://[CUSTOMER].portal.jask.ai/config 
-
+```
 **SCOPE**
 
 V.01 of this DOC will cover the following APIs and most relevant functionality for each:
@@ -30,34 +30,34 @@ V.01 of this DOC will cover the following APIs and most relevant functionality f
 ##Search API
 -------------------------------------------
 
-Global Search:
-
+**Global Search:**
+```
 GET:  /api/search?q=<query string>
-
+```
 Returns:
 
 JSON of all hits across data types of Asset, SmartAlert, and Signal
 
-Signals Search:
-
+**Signals Search:**
+```
 GET:  /api/search/signals?q=<query string>
-
+```
 Returns:
 
 JSON of all hits across data types of Asset, SmartAlert, and Signal
 
-Alert Search:
-
+**Alert Search:**
+```
 GET:  /api/search/alerts?q=<query string>
-
+```
 Returns:
 
 JSON of all hits across data types of Asset, SmartAlert, and Signal
 
-Asset Search:
-
+**Asset Search:**
+```
 GET:  /api/search/assetts?q=<query string>
-
+```
 Returns:
 
 JSON of all hits across data types of Asset, SmartAlert, and Signal
