@@ -29,7 +29,7 @@ This repoistory contains python tools to interface with the most commonly utiliz
 
 V.01 of this DOC will cover the following APIs and basic functionality for each:
 
-[Search](#search-api) [SmartAlerts](#alerts-api) [Signals](#signals-api) [Records](#records-api) [Assets](#assets-api) [Integrations](#integrations-api) [Status](#status-api) [Threat Intel](#threat-intel-api) [Sensors](#sensors-api) [Patterns](#patterns-api)
+[Search](#search-api) [SmartAlerts](#alerts-api) [Signals](#signals-api) [Assets](#assets-api) [Integrations](#integrations-api) [Status](#status-api) [Threat Intel](#threat-intel-api) [Sensors](#sensors-api) [Patterns](#patterns-api)
 
 ## Search API
 -------------------------------------------
@@ -109,6 +109,7 @@ JSON of all matching assets inside optional filter params.
 
 ## Alerts API
 -------------------------------------------
+Alerts API references SmartAlerts, or Insights, which are the highest level abstractions in JASK SIEM consisting of multiple signals, and records and relating to one or more assets. 
 
 **Full Alert Details:**
 ```
@@ -163,6 +164,8 @@ Returns a list of users and associated ID numbers to whom alerts can be assigned
 
 ## Signals API
 -------------------------------------------
+Signals API references signals in JASK which are created when records exhibit suspicious properties and mate with patterns or other detection logic. 
+
 **Full Signal Detail:**
 ```
 GET:  /api/signal/[SIGNAL ID]
@@ -195,13 +198,98 @@ Returns:
 
 Returns the total count of signals over 2/7/30 days and all time for your organization.
 
-## Records API
--------------------------------------------
-
-
 ## Assets API
 -------------------------------------------
+Assets API references the device, user, or application involved in an activity inside our outside of the corporate network. This Asset is created through correlations in records and is the subject of alerts and signals. 
 
+**Full Asset Detail:**
+```
+GET:  /api/asset/[ASSET ID]
+```
+Returns:
+
+Returns JSON of full asset detail, risk score, source, related assets, and other data.
+
+**Full Asset Detail by IP:**
+```
+GET:  /api/asset/ip/[ASSET IPv4]
+```
+Returns:
+
+Returns JSON of full asset detail, risk score, source, related assets, and other data.
+
+**Asset Metadata:**
+```
+GET:  /api/asset/[ASSET ID]/metadata
+```
+Returns:
+
+Returns JSON of asset metadata provided through import, correlation, or manual update if available.
+
+**Asset Metadata by IP:**
+```
+GET:  /api/asset/ip/[ASSET IPv4]/metadata
+```
+Returns:
+
+Returns JSON of asset metadata provided through import, correlation, or manual update if available.
+
+**Asset Historic Risk**
+```
+GET:  /api/asset/[ASSET ID]/historic_risk/<int> (int = days to search retroactively)
+```
+Returns:
+
+Returns JSON of historic risk scores as well as the timestamp they were applied to the asset if available.
+
+**Asset's Related Assets**
+```
+GET:  /api/asset/[ASSET ID]/related_assets
+```
+Returns:
+
+Returns an object containing other assets determined to be related to the subject via correlation, ML, or manual entry. 
+
+**Asset Change History and Audit Log:**
+```
+GET:  /api/asset/[ASSET ID]/history
+GET:  /api/asset/[ASSET ID]/auditlog
+```
+Returns:
+
+Returns an object containing the change history or audit log (user making changes) for a given asset over time, including new/old values and dates. 
+
+**Records Related to Signal Enrichment:**
+```
+GET:  /api/alert/[SIGNAL ID]/records/all
+```
+Returns:
+
+Returns JSON object containing all records (logs) conected with a signal if available. "all" may be substituted with a specific record type.
+
+**Customer Active Asset List:**
+```
+GET:  /asset/active/<asset_type> (asset_type must be defined, such as "ip") 
+```
+Returns:
+
+Returns the total count of active assets over 2/7/30 days and all time for your organization.
+
+**Customer Whitelisted Asset List:**
+```
+GET:  /asset/whitelisted 
+```
+Returns:
+
+Returns the list of assets which have been whitelisted in JASK by the security team in your organization.
+
+**Customer Riskiest Asset List:**
+```
+GET:  /asset/riskiest 
+```
+Returns:
+
+Returns the list of assets with the highest risk score's over a user defined period of time (defined in JASK application)
 
 ## Integrations API
 -------------------------------------------
