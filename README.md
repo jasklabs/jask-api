@@ -34,9 +34,45 @@ V.01 of this DOC will cover the following APIs and basic functionality for each:
 ## Search API
 -------------------------------------------
 
-**Global Search:**
+JASK Search "query string" is compared to all fields across the selected context (All, Signals, Alerts or Assets), query examples could be IP addresses, Alert Names, or Countries, ISP names, etc). 
 
-JASK Search "query string" is compared to all fields across the selected context (All, Signals, Alerts or Assets), query examples could be IP addresses, Alert Names, or Countries, ISP names, etc). Comparision takes place in Elastic Search using [standard analyzer tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html). 
+Comparision takes place in Elastic Search using [standard analyzer tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html). 
+
+A field may be specifed as well to restrict search results. 
+
+**Search Query Modifiers for All Search Endpoints**
+
+*Search Query String:*
+```
+FORMAT: &q=<search query> 
+
+EXAMPLE: &q=104.236.47.73 (Return elements matching "104.236.47.73" in any field)
+
+EXAMPLE: &q=id:2bd18a03-9252-3cf9-a401-1de0fc01cbe4 (Returns elements with "id" fields matching "2bd18a03-9252-3cf9-a401-1de0fc01cbe4")
+```
+
+*Sort by (accending or decending) a given return field:*
+```
+FORMAT: &sort_by=<- or +><fieldname> 
+
+EXAMPLE: &sort_by=-timestamp (sort results by timestamp decending)
+```
+
+*Limit Search Results* 
+```
+FORMAT: &limit=<int> 
+
+EXAMPLE: &limit=<40> (Limit return to first 40 results)
+```
+
+*Offset Search Results (For Pagination)*
+```
+FORMAT: &offset=<int> 
+
+EXAMPLE: &offset=<41> (Start Results from #41)
+```
+
+**Global Search:**
 
 ```
 GET:  /api/search?q=<query string>
@@ -68,30 +104,6 @@ GET:  /api/search/assets?q=<query string>
 Returns:
 
 JSON of all matching assets inside optional filter params.
-
-**Search Query Modifiers for All Search Endpoints**
-
-
-Sort by (accending or decending) a given return field: 
-```
-FORMAT: &sort_by=<- or +><fieldname> 
-
-EXAMPLE: &sort_by=-timestamp (sort results by timestamp decending)
-```
-
-Limit Search Results 
-```
-FORMAT: &limit=<int> 
-
-EXAMPLE: &limit=<40> (Limit return to first 40 results)
-```
-
-Offset Search Results (For Pagination)
-```
-FORMAT: &offset=<int> 
-
-EXAMPLE: &offset=<41> (Start Results from #41)
-```
 
 -------------------------------------------
 
