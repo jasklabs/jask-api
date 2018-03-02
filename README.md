@@ -40,7 +40,7 @@ GET:  /api/search?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[
 ```
 Returns:
 
-JSON of all hits across data types of Asset, SmartAlert, and Signal
+JSON of all hits across data types of asset, smartalert, and signal inside optional filter params.
 
 **Signals Search:**
 ```
@@ -48,7 +48,7 @@ GET:  /api/search/signals?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=
 ```
 Returns:
 
-JSON of all hits across data types of Asset, SmartAlert, and Signal
+JSON of all matching signals inside optional filter params.
 
 **Alert Search:**
 ```
@@ -56,7 +56,7 @@ GET:  /api/search/alerts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<
 ```
 Returns:
 
-JSON of all hits across data types of Asset, SmartAlert, and Signal
+JSON of all matching smartalerts inside optional filter params.
 
 **Asset Search:**
 ```
@@ -64,7 +64,7 @@ GET:  /api/search/assetts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=
 ```
 Returns:
 
-JSON of all hits across data types of Asset, SmartAlert, and Signal
+JSON of all matching assets inside optional filter params.
 
 -------------------------------------------
 
