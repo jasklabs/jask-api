@@ -29,7 +29,7 @@ This repoistory contains python tools to interface with the most commonly utiliz
 
 V.01 of this DOC will cover the following APIs and basic functionality for each:
 
-[Search](#Search-API) [SmartAlerts](#Alerts-API) [Signals](#Signals-API) [Records](#Records-API) [Assets](#Assets-API) [Integrations](#Integrations-API) [Status](#Status-API) [Threat Intel](#Threat-Intel-API) [Signals](#Signals-API) [Patterns](#Patterns-API)
+[Search](#Search-API) [SmartAlerts](#Alerts-API) [Signals](#Signals-API) [Records](#Records-API) [Assets](#Assets-API) [Integrations](#Integrations-API) [Status](#Status-API) [Threat Intel](#Threat-Intel-API) [Sensors](#Sensors-API) [Patterns](#Patterns-API)
 
 ## Search API
 -------------------------------------------
@@ -121,5 +121,35 @@ GET:  /api/alert/assignees
 Returns:
 
 Returns a list of users and associated ID numbers to whom alerts can be assigned in your organization.
+
+##Signals API
+-------------------------------------------
+
+
+##Records API
+-------------------------------------------
+
+
+##Assets API
+-------------------------------------------
+
+
+##Integrations API
+-------------------------------------------
+
+
+##Status API
+-------------------------------------------
+
+
+##Threat Intel API
+-------------------------------------------
+
+
+##Sensors API
+-------------------------------------------
+
+
+##Patterns API
 -------------------------------------------
 
