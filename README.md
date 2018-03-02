@@ -68,7 +68,7 @@ JSON of all matching assets inside optional filter params.
 
 -------------------------------------------
 
-## SmartAlerts
+## Alerts API
 -------------------------------------------
 
 **Full Alert Details:**
