@@ -242,7 +242,7 @@ Returns:
 
 Returns JSON of historic risk scores as well as the timestamp they were applied to the asset if available.
 
-**Asset's Related Assets**
+**Related Assets**
 ```
 GET:  /api/asset/[ASSET ID]/related_assets
 ```
@@ -258,14 +258,6 @@ GET:  /api/asset/[ASSET ID]/auditlog
 Returns:
 
 Returns an object containing the change history or audit log (user making changes) for a given asset over time, including new/old values and dates. 
-
-**Records Related to Signal Enrichment:**
-```
-GET:  /api/alert/[SIGNAL ID]/records/all
-```
-Returns:
-
-Returns JSON object containing all records (logs) conected with a signal if available. "all" may be substituted with a specific record type.
 
 **Customer Active Asset List:**
 ```
