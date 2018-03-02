@@ -182,13 +182,13 @@ Returns:
 
 Returns object containing signal enrichment data if available.
 
-**Records Related to Signal Enrichment:**
+**Records Related to Signal:**
 ```
-GET:  /api/alert/[SIGNAL ID]/records/all
+GET:  /api/alert/[SIGNAL ID]/records/<record_type> (<record_type> is either specific such as "dns" or "all")
 ```
 Returns:
 
-Returns JSON object containing all records (logs) conected with a signal if available. "all" may be substituted with a specific record type.
+Returns JSON object containing all records (logs) conected with a signal if available.
 
 **Customer Signal Counts:**
 ```
@@ -283,12 +283,34 @@ Returns:
 
 Returns the list of assets with the highest risk score's over a user defined period of time (defined in JASK application)
 
-## Integrations API
--------------------------------------------
-
-
 ## Status API
 -------------------------------------------
+Status API endpoints check for and ensure the health of your JASK ASOC platform.
+
+**JASK Dashboard Counts:**
+```
+GET:  /api/dashboard/counts
+```
+Returns:
+
+Returns a JSON of the total flow records and total over all records for an organization, useful for tracking deltas and ingestion perfomance.
+
+**List JASK Users:**
+```
+GET:  /api/user
+```
+Returns:
+
+Returns a list of JASK users and their activity records, RBAC, and MFA status, and other details.
+
+**List JASK Sensors:**
+```
+GET:  /api/sensor
+```
+Returns:
+
+Returns a list of JASK sensors and their current status, records per second throughput, configs and other details. 
+
 
 ## Threat Intel API
 -------------------------------------------
@@ -296,7 +318,84 @@ Returns the list of assets with the highest risk score's over a user defined per
 
 ## Sensors API
 -------------------------------------------
+Sensor API endpoints allow for granular detail visibility into sensor performance and details.
+
+**List of Sensors:**
+```
+GET:  /api/sensor
+```
+Returns:
+
+Returns a list of JASK sensors and their current status, records per second throughput, configs and other details. 
+
+**List of Sensor Errors:**
+```
+GET:  /api/sensor/error
+```
+Returns:
+
+Returns a list of error states reported by all connected JASK Sensors.
+
+**Full Sensor Detail:**
+```
+GET:  /api/sensor/[SENSOR ID]
+```
+Returns:
+
+Returns a full list of details on a specific sensor including flow data, versioning, and configuration information.
+
+**Sensor History:**
+```
+GET:  /api/sensor/[SENSOR ID]/history
+```
+Returns:
+
+Returns a full list history of sensor configuration changes with all details and timestamps so as to identify deltas. 
+
+**Sensor Errors:**
+```
+GET:  /api/sensor/[SENSOR ID]/error
+```
+Returns:
+
+Returns a list of error states returned by the specific sensor ID.
+
 
 ## Patterns API
 -------------------------------------------
+Pattern is the name used to reference detection logic in JASK, the Patterns API enable idenficiation, enablement and manipulation of these rulesets. 
+
+**List of Patterns:**
+```
+GET:  /api/pattern                (Returns all)
+GET:  /api/pattern/[PATTERN TYPE] (Returns a subset based on type such as "match")
+```
+Returns:
+
+Returns a list of JASK detection logic, their current enabled state, description, category and other details.
+
+**Pattern Status:**
+```
+GET:  /api/pattern/status
+```
+Returns:
+
+Returns the number of disabled, enabled and total paterns as well as current matching engine status. 
+
+**Full Pattern Details:**
+```
+GET:  /api/pattern/[PATTERN TYPE]/[PATTERN ID]
+```
+Returns:
+
+Returns a JSON of detailed elements of a patern including description, expression, last update and audit info as well as source. 
+
+**Full Sensor Detail:**
+```
+PUT:    /api/pattern/[PATTERN TYPE]/[PATTERN ID]/enable (enables pattern)
+DELETE: /api/pattern/[PATTERN TYPE]/[PATTERN ID]/enable (disables pattern)
+```
+Returns:
+
+Either Enables or Disables a specific pattern based upon type and ID specification.  
 
