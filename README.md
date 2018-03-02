@@ -31,6 +31,7 @@ V.01 of this DOC will cover the following APIs and basic functionality for each 
 
 *A thank you to @kbandla for work on [APTnotes](https://github.com/kbandla/APTnotes) provided to test TI ingest here.*
 
+-------------------------------------------
 **[Search](#search-api) - [SmartAlerts](#alerts-api) - [Signals](#signals-api) - [Assets](#assets-api) - [Integrations](#integrations-api) - [Status](#status-api) [Threat Intel](#threat-intel-api) - [Sensors](#sensors-api) - [Patterns](#patterns-api)**
 
 ## Search API
