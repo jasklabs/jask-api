@@ -122,34 +122,34 @@ Returns:
 
 Returns a list of users and associated ID numbers to whom alerts can be assigned in your organization.
 
-##Signals API
+## Signals API
 -------------------------------------------
 
 
-##Records API
+## Records API
 -------------------------------------------
 
 
-##Assets API
+## Assets API
 -------------------------------------------
 
 
-##Integrations API
+## Integrations API
 -------------------------------------------
 
 
-##Status API
+## Status API
 -------------------------------------------
 
 
-##Threat Intel API
+## Threat Intel API
 -------------------------------------------
 
 
-##Sensors API
+## Sensors API
 -------------------------------------------
 
 
-##Patterns API
+## Patterns API
 -------------------------------------------
 
