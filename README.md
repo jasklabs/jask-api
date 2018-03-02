@@ -21,6 +21,10 @@ You can retrieve your personal API key from the following URL under the "Profile
 ```
 https://[CUSTOMER].portal.jask.ai/config 
 ```
+**API TOOLS**
+
+This repoistory contains python tools to interface with the most commonly utilized API endpoints (Search, Threat Intel, Etc) located in */jask-api/api-tools*
+
 **SCOPE**
 
 V.01 of this DOC will cover the following APIs and basic functionality for each:
@@ -32,7 +36,7 @@ V.01 of this DOC will cover the following APIs and basic functionality for each:
 
 **Global Search:**
 ```
-GET:  /api/search?q=<query string>
+GET:  /api/search?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
 ```
 Returns:
 
@@ -40,7 +44,7 @@ JSON of all hits across data types of Asset, SmartAlert, and Signal
 
 **Signals Search:**
 ```
-GET:  /api/search/signals?q=<query string>
+GET:  /api/search/signals?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
 ```
 Returns:
 
@@ -48,7 +52,7 @@ JSON of all hits across data types of Asset, SmartAlert, and Signal
 
 **Alert Search:**
 ```
-GET:  /api/search/alerts?q=<query string>
+GET:  /api/search/alerts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
 ```
 Returns:
 
@@ -56,7 +60,7 @@ JSON of all hits across data types of Asset, SmartAlert, and Signal
 
 **Asset Search:**
 ```
-GET:  /api/search/assetts?q=<query string>
+GET:  /api/search/assetts?q=<query string>&[sort_by=<+ or -><fieldname>]&[limit=<INT>]&[offset=<INT>]
 ```
 Returns:
 
