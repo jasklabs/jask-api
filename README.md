@@ -1,7 +1,7 @@
-###JASK TRIDENT API v.01 (Not Versioned)
+### JASK TRIDENT API v.01 (Not Versioned)
 ===========================================
 
-#JASK API Global Interaction Rules
+# JASK API Global Interaction Rules
 -------------------------------------------
 **URL STRUCTURE**
 
@@ -27,7 +27,7 @@ V.01 of this DOC will cover the following APIs and most relevant functionality f
 
 [Search](#Search-API) [SmartAlerts](#Alerts-API) [Signals](#Signals-API) [Records](#Records-API) [Assets](#Assets-API) [Integrations](#Integrations-API) [Status](#Status-API) [Threat Intel](#Threat-Intel-API) [Signals](#Signals-API) [Patterns](#Patterns-API)
 
-##Search API
+## Search API
 -------------------------------------------
 
 **Global Search:**
