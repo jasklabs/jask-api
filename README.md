@@ -314,7 +314,42 @@ Returns a list of JASK sensors and their current status, records per second thro
 
 ## Threat Intel API
 -------------------------------------------
+Threat Intelligence API endpoints and helper tools will help ingest and manage threat intel sources relevant to your security team for correlation inside of the JASK platform. 
 
+**Threat Intel Sources:**
+```
+GET:  /api/intelligence/sources
+```
+Returns:
+
+Returns a list of imported threat intelligence sources, name of the feed, current count of IOC's and date last modified. 
+
+**Threat Intel Scores:**
+```
+GET:  /api/intelligence/scoring
+```
+Returns:
+
+Returns a list of weighting in the form of scores to be applied when a threat intelligence match is made to a given object (example, hash, hostname or url)
+
+**Threat Intel Scoring:**
+```
+GET:  /api/intelligence/scoring
+```
+Returns:
+
+Returns a list of weighting in the form of scores to be applied when a threat intelligence match is made to a given object (example, hash, hostname or url)
+
+**Threat Intel CSV Imports:**
+```
+GET:  /api/intelligence/csvimport
+GET:  /api/intelligence/csvimport/[IMPORT ID]
+```
+Returns:
+
+Returns a list of csvimports containing filename, ID, list of indicators and observables and timestamp of import. Specific details can be retrieved by appending the report ID. 
+
+*Please Utilize the UX/UI or attached Python Tool (*/api-tools/sample_intel_api.py*) for conducting CSV Imports* 
 
 ## Sensors API
 -------------------------------------------
