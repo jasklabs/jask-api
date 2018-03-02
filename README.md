@@ -1,7 +1,7 @@
-### JASK TRIDENT API v.01 (Not Versioned)
+# JASK TRIDENT API v.01 (*API Subject To Change Without Notice*)
 ===========================================
 
-# JASK API Global Interaction Rules
+## JASK API Global Interaction Rules
 -------------------------------------------
 **URL STRUCTURE**
 
