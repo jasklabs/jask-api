@@ -429,7 +429,7 @@ Returns:
 
 Returns a JSON of detailed elements of a patern including description, expression, last update and audit info as well as source. 
 
-**Full Sensor Detail:**
+**Enable or Disable Pattern:**
 ```
 PUT:    /api/pattern/[PATTERN TYPE]/[PATTERN ID]/enable (enables pattern)
 DELETE: /api/pattern/[PATTERN TYPE]/[PATTERN ID]/enable (disables pattern)
