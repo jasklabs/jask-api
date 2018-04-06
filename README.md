@@ -442,16 +442,20 @@ Either Enables or Disables a specific pattern based upon type and ID specificati
 ## CURL Example Usage
 -------------------------------------------
 **Workflow status**
+```
 curl -d '{
 	"query": "*",
 	"aggregations": [{"field": "workflow_status"}]
 }' -H "Content-Type: application/json" -u "api_username:api_user_api_key"  -X POST https://demo.portal.jask.ai/api/search/alerts/aggregate
-
+```
 **Workflow groups assigned to**
+```
 curl -d '{
 	"query": "*",
 	"aggregations": [{"field": "group_assigned_to"}]
 }' -H "Content-Type: application/json" -u "api_username:api_user_api_key"  -X POST https://demo.portal.jask.ai/api/search/alerts/aggregate
-
+```
 **Signal search within timeframe**
+```
 https://demo.portal.jask.ai/api/search/signals?api_key=<api_key>&username=<api_username>&q=*&sort_by=-timestamp&offset=0&limit=10
+```
