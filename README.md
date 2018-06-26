@@ -76,6 +76,13 @@ FORMAT: &offset=<int>
 EXAMPLE: &offset=<41> (Start Results from #41)
 ```
 
+*Limit Search Results to Timestamp or Time Range*
+```
+FORMAT: +AND+Timestamp (appended to query string)
+
+EXAMPLE: api/search/signals?q=*+AND+timestamp%3A%5Bnow-6h+TO+now (Signals 6 hours ago to now)
+EXAMPLE: api/search/signals?q=*+AND+timestamp%3A%5B2018-06-13+TO+2018-06-14 (Signals in 6/13 - 6/14 date range)
+```
 **Global Search:**
 
 ```
