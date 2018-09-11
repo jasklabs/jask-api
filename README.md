@@ -23,7 +23,7 @@ https://[CUSTOMER].portal.jask.ai/config
 ```
 **API TOOLS**
 
-This repoistory contains python tools to interface with the most commonly utilized API endpoints (Search, Threat Intel, Etc) located in */jask-api/api-tools*
+This repository contains python tools to interface with the most commonly utilized API endpoints (Search, Threat Intel, Etc) located in */jask-api/api-tools*
 
 **SCOPE**
 
