@@ -1,7 +1,10 @@
-from utils import validate_basic_params
 import logging
+
 import requests
 import unicodecsv as csv
+
+from .utils import validate_basic_params
+
 
 log = logging.getLogger()
 

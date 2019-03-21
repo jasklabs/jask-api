@@ -1,9 +1,11 @@
-import logging
 import sys
+import logging
+
 import requests
 import unicodecsv as csv
 
-from utils import validate_basic_params, is_int_string
+from .utils import validate_basic_params, is_int_string
+
 
 log = logging.getLogger()
 

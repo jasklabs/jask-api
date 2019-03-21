@@ -1,4 +1,4 @@
-from utils import get_simple_list, validate_basic_params
+from .utils import get_simple_list, validate_basic_params
 
 """
 Get a list of the sensors associated with this cluster.

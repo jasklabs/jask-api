@@ -1,5 +1,9 @@
-import logging, requests
-from utils import validate_basic_params
+import logging
+
+import requests
+
+from .utils import validate_basic_params
+
 
 log = logging.getLogger()
 
