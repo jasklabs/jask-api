@@ -1,4 +1,11 @@
-# JASK TRIDENT API v.01 
+# JASK TRIDENT API v.01 (DEPRECATED)
+-------------------------------------------
+
+# DEPRECATION NOTICE
+-------------------------------------------
+
+The APIs documented here have all been deprecated, and many of them have already been deleted. The new version of the APIs is documented on each JASK portal at the URL `/api/v1/docs` (e.g. https://demo.portal.jask.ai/api/v1/docs).
+
 -------------------------------------------
 
 ## JASK API Global Interaction Rules
